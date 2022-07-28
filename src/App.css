@@ -1,0 +1,133 @@
+.App{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.header-text{
+    font-family: 'EB Garamond', serif;
+}
+
+.info-area{
+    display: flex;
+}
+
+.info-icon{
+    width: 1rem;
+    padding-right:0.3rem;
+}
+
+.music-icon{
+    width: 1rem;
+    padding-left:0.3rem;
+}
+
+
+.Menu{
+    width: 50rem;
+    height: 50rem;
+    border-radius: 10px;
+    background-color: gray;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.Quiz{
+    width: 50rem;
+    height: 50rem;
+    border-radius: 10px;
+    background-color: gray;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.End{
+    width: 50rem;
+    height: 50rem;
+    border-radius: 10px;
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.start-btn{
+    width:10rem;
+    padding: 1.1rem;
+    border-radius: 5px;
+    cursor:pointer;
+    background-color: green;
+    font-size: 1.5rem;
+  
+}
+
+.Menu,.Quiz, .End{
+    color: white;
+ }
+
+
+ .song-icon{
+margin-top: 1.2rem;    
+width: 1.5rem;
+height:1.5rem;
+background-color: green;
+margin-left:0.3rem;
+cursor: pointer;
+ }
+
+
+.Quiz button{
+    width:15rem;
+    height:3rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.cat-area{
+    color: black;
+}
+
+.question-text{
+    font-size:2.1rem;
+    text-align: center;
+}
+
+.options{
+      display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.final-btn{
+    color: white;
+    background-color: green;
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: space-evenly;
+    width:100%;
+    margin-top: -10rem;
+    font-size: 1.3rem;
+}
+
+.opt-btn:hover{
+    background-color: white;
+}
+
