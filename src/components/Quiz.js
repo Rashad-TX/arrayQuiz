@@ -1,8 +1,10 @@
 import React, {useState, useContext} from "react";
 import { Questions } from "../helpers/Questions";
 import {QuizContext} from "../helpers/Context";
+import {VariableContext} from "../helpers/vContext";
 import Buzzer from "../assets/audio/Buzzer.mp3";
 import Correct from "../assets/audio/Correct.mp3";
+import Charts from "./Charts";
 
 
 function Quiz(){
@@ -62,6 +64,7 @@ const nextQuestion = () => {
         setButtonColor3("white");
         setButtonColor4("white");
         setCurrQuestion(currQuestion +1);
+        console.log(myArray);
      
     } else {
        audio2.play()
@@ -77,10 +80,17 @@ const completeQuiz = () => {
     if(Questions[currQuestion].answer == optionChosen){
         setScore(score + 1);
         setMyArray( [...myArray, Questions[currQuestion].category]);
+        console.log(myArray);
+
      
 }
 setGameState("end");
 }
+
+
+
+
+
 return(
 <div className="Quiz">
 <div className="scoreboard">
@@ -103,7 +113,12 @@ return(
 
 </div>
 
-
+<VariableContext.Provider value={{defCorrect, mutCorrect, retCorrect, IterCorrect,ObjCorrect,CondCorrect }}>
+    
+        <div className="myChart">
+    <Charts/>
+    </div>
+</VariableContext.Provider>
 
 
 </div>

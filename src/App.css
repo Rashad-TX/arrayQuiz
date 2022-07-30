@@ -131,3 +131,10 @@ cursor: pointer;
     background-color: white;
 }
 
+.myChart{
+    background-color: black;
+    padding-top: 1rem;
+    width: 40rem;
+     height: 30rem;
+     font-size: 2rem;
+}

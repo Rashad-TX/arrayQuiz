@@ -8,18 +8,10 @@ import Info from "./assets/images/info.svg";
 import ReactAudioPlayer from 'react-audio-player';
 import ClassicalSong from  "./assets/audio/classical1.mp3";
 import Notes from "./assets/images/music.svg";
-import Charts from './components/Charts';
-
-
-
 
 function App() {
  const [gameState, setGameState] = useState("menu");
  const [score, setScore] =useState(0)
-
-
-
-
 
   return (
     <div className="App">
@@ -34,10 +26,8 @@ function App() {
 <QuizContext.Provider value={{gameState, setGameState, score, setScore}}>
 {gameState === "menu" && <Menu/>}
 {gameState === "quiz" && <Quiz/>}    
-{gameState === "end" && <End/>}   
+{gameState === "end" && <End/>}  
 </QuizContext.Provider>         
-
-
     </div>
   );
 }

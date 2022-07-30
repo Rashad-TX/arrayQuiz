@@ -134,7 +134,7 @@ export const Questions = [
 {
     id:12,
     question:"Which method mutates the array it's called on?",
-    category: "Interations",
+    category: "Iterations",
     optionA: "some",
     optionB: "every",
     optionC: "push",
