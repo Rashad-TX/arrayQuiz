@@ -1,7 +1,6 @@
 import React, {useState, useContext} from "react";
 import { Questions } from "../helpers/Questions";
 import {QuizContext} from "../helpers/Context";
-import { getByPlaceholderText } from "@testing-library/react";
 import Buzzer from "../assets/audio/Buzzer.mp3";
 import Correct from "../assets/audio/Correct.mp3";
 
@@ -15,6 +14,16 @@ const [buttonColor2, setButtonColor2] = useState("white");
 const [buttonColor3, setButtonColor3] = useState("white");
 const [buttonColor4, setButtonColor4] = useState("white");
 const qPerc = ((score / Questions.length) * 100).toFixed(1);
+const [myArray, setMyArray] = useState([]);
+
+
+const defCorrect = myArray.reduce(function(n, val) {return n + (val === "Definition");}, 0);
+const mutCorrect = myArray.reduce(function(n, val) {return n + (val === "Mutators");}, 0);
+const retCorrect = myArray.reduce(function(n, val) {return n + (val === "Returns");}, 0);
+const IterCorrect = myArray.reduce(function(n, val) {return n + (val === "Interations");}, 0);
+const ObjCorrect = myArray.reduce(function(n, val) {return n + (val === "Mutators");}, 0);
+const CondCorrect = myArray.reduce(function(n, val) {return n + (val === "Conditional");}, 0);
+
 
 const audio = new Audio(Correct);
 const audio2 = new Audio(Buzzer);
@@ -22,34 +31,38 @@ const audio2 = new Audio(Buzzer);
 
 const pressedOption1 =(event) =>{
     setOptionChosen(event.target.id);
-    setButtonColor1("goldenrod");
+    if(buttonColor1 ==="white"){setButtonColor1("goldenrod")}
+    else{setButtonColor1("white")};
 }
+
 const pressedOption2 =(event) =>{
     setOptionChosen(event.target.id);
-    setButtonColor2("goldenrod");
+    if(buttonColor2 ==="white"){setButtonColor2("goldenrod")}
+    else{setButtonColor2("white")};
 }
 const pressedOption3 =(event) =>{
     setOptionChosen(event.target.id);
-    setButtonColor3("goldenrod");
+    if(buttonColor3 ==="white"){setButtonColor3("goldenrod")}
+    else{setButtonColor3("white")};
 }
 const pressedOption4 =(event) =>{
     setOptionChosen(event.target.id);
-    setButtonColor4("goldenrod");
+    if(buttonColor4 ==="white"){setButtonColor4("goldenrod")}
+    else{setButtonColor4("white")};
 }
-
-    
-
 
 
 const nextQuestion = () => {
     if(Questions[currQuestion].answer == optionChosen){
+        setMyArray( [...myArray, Questions[currQuestion].category]);
         setScore(score + 1);
         audio.play();
         setButtonColor1("white");
         setButtonColor2("white");
         setButtonColor3("white");
         setButtonColor4("white");
-        setCurrQuestion(currQuestion +1)
+        setCurrQuestion(currQuestion +1);
+     
     } else {
        audio2.play()
        setCurrQuestion(currQuestion +1);
@@ -63,6 +76,8 @@ const nextQuestion = () => {
 const completeQuiz = () => {
     if(Questions[currQuestion].answer == optionChosen){
         setScore(score + 1);
+        setMyArray( [...myArray, Questions[currQuestion].category]);
+     
 }
 setGameState("end");
 }
