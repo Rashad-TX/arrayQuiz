@@ -2,7 +2,7 @@ import React, {useState,useContext} from 'react';
 import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import { Questions } from "../helpers/Questions";
-import {VariableContext} from "../helpers/vContext";
+import {useVariable} from "../helpers/vContext";
 import {QuizContext} from "../helpers/Context";
 
 
@@ -11,7 +11,7 @@ import {QuizContext} from "../helpers/Context";
 
 
 const Charts = () =>{
-const {defCorrect, mutCorrect, retCorrect, IterCorrect,ObjCorrect,CondCorrect } = useContext(VariableContext);
+const {defCorrect, mutCorrect, retCorrect, IterCorrect,ObjCorrect,CondCorrect } = useVariable();
 const {score, setScore, setGameState} = useContext(QuizContext);
 const defQuest =  Questions.filter((obj) => obj.category === "Definition").length;
 const mutQuest = Questions.filter((obj) => obj.category === "Mutators").length;

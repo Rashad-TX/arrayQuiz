@@ -1,13 +1,14 @@
 import React, {useState, useContext} from "react";
 import { Questions } from "../helpers/Questions";
 import {QuizContext} from "../helpers/Context";
-import {VariableContext} from "../helpers/vContext";
+import {useVariable} from "../helpers/vContext";
 import Buzzer from "../assets/audio/Buzzer.mp3";
 import Correct from "../assets/audio/Correct.mp3";
 import Charts from "./Charts";
 
 
 function Quiz(){
+    const {myArray, setMyArray} = useVariable()
 const {score, setScore, setGameState} = useContext(QuizContext);
 const [currQuestion, setCurrQuestion] =useState(0);
 const[optionChosen, setOptionChosen] = useState("");
@@ -16,16 +17,6 @@ const [buttonColor2, setButtonColor2] = useState("white");
 const [buttonColor3, setButtonColor3] = useState("white");
 const [buttonColor4, setButtonColor4] = useState("white");
 const qPerc = ((score / Questions.length) * 100).toFixed(1);
-const [myArray, setMyArray] = useState([]);
-
-
-const defCorrect = myArray.reduce(function(n, val) {return n + (val === "Definition");}, 0);
-const mutCorrect = myArray.reduce(function(n, val) {return n + (val === "Mutators");}, 0);
-const retCorrect = myArray.reduce(function(n, val) {return n + (val === "Returns");}, 0);
-const IterCorrect = myArray.reduce(function(n, val) {return n + (val === "Interations");}, 0);
-const ObjCorrect = myArray.reduce(function(n, val) {return n + (val === "Mutators");}, 0);
-const CondCorrect = myArray.reduce(function(n, val) {return n + (val === "Conditional");}, 0);
-
 
 const audio = new Audio(Correct);
 const audio2 = new Audio(Buzzer);
@@ -55,6 +46,7 @@ const pressedOption4 =(event) =>{
 
 
 const nextQuestion = () => {
+
     if(Questions[currQuestion].answer == optionChosen){
         setMyArray( [...myArray, Questions[currQuestion].category]);
         setScore(score + 1);
@@ -81,10 +73,12 @@ const completeQuiz = () => {
         setScore(score + 1);
         setMyArray( [...myArray, Questions[currQuestion].category]);
         console.log(myArray);
+        console.log("I was clicked!")
 
      
 }
-setGameState("end");
+
+    setGameState("end");
 }
 
 
@@ -113,12 +107,7 @@ return(
 
 </div>
 
-<VariableContext.Provider value={{defCorrect, mutCorrect, retCorrect, IterCorrect,ObjCorrect,CondCorrect }}>
-    
-        <div className="myChart">
-    <Charts/>
-    </div>
-</VariableContext.Provider>
+
 
 
 </div>

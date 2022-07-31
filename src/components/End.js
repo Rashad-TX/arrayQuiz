@@ -26,6 +26,8 @@ const restartQuiz =() =>{
 
 <h3>Score: {score} / {Questions.length}</h3>
 <h3> {ePerc} %</h3>
+
+<Charts/>
 <button onClick={restartQuiz}>Retry</button>
 </div>
     )
