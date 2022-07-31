@@ -23,14 +23,15 @@ const restartQuiz =() =>{
     return(
 <div className="End">
 <h1>RESULTS</h1>
-
+<div>
+<button onClick={restartQuiz}>Retry</button>
+</div>
 <h3>Score: {score} / {Questions.length}</h3>
 <h3> {ePerc} %</h3>
 <div className="myChart">
 <h6 className="chart-hdr"> % Correct By Category</h6>
 <Charts/>
 </div>
-<button onClick={restartQuiz}>Retry</button>
 </div>
     )
 }

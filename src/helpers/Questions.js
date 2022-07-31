@@ -509,7 +509,7 @@ export const Questions = [
     id:46,
     question:"Which is the correct syntax for a Do While Loop",
     category: "Iterations",
-    optionA: "do(condition, iterator, initizlizer)while{fn}",
+    optionA: "do(condition)while{fn}",
     optionB: "do (condition; initializer; iterator){fn}",
     optionC: "do{fn} while(condition);",
     optionD: "(initializer; condition; iterator)while{fn}",
@@ -531,10 +531,10 @@ export const Questions = [
     id:48,
     question:"Which is the correct syntax for forEach",
     category: "Iterations",
-    optionA: "array.forEach(fn)" ,
-    optionB: "arrray.forEach(func(currVal,idx,array){fn}",
-    optionC: "array.forEach(array * 2);",
-    optionD: "forEach(array){fn}",
+    optionA: "arr.forEach(fn)" ,
+    optionB: "arr.forEach(func(currVal,idx,arr){fn}",
+    optionC: "arr.forEach(arr * 2);",
+    optionD: "forEach(arr){fn}",
     answer:"optionB"
 
 },

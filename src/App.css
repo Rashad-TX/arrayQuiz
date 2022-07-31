@@ -141,3 +141,170 @@ cursor: pointer;
 .chart-hdr{
 text-align: center;
 }
+
+@media (max-width:850px){
+
+    .Menu{
+        width: 40rem;
+        height: 40rem;
+    }
+
+
+    .Quiz{
+        width: 40rem;
+        height: 40rem;
+       
+    }
+    
+    .End{
+        width: 40rem;
+        height: 40rem;
+    }
+
+    .question-text{
+        font-size:1.5rem;
+        text-align: center;
+    }
+
+    .myChart{
+        background-color: black;
+        padding-top: 1rem;
+        width: 30rem;
+         height: 20rem;
+         font-size: 2rem;
+    }
+
+
+}
+
+@media (max-width:665px){
+
+    .Menu{
+        width: 35rem;
+        height: 40rem;
+    }
+
+
+    .Quiz{
+        width: 35rem;
+        height: 40rem;
+       
+    }
+    
+    .End{
+        width: 40rem;
+        height: 40rem;
+    }
+ 
+
+}
+
+@media (max-width:565px){
+
+    .Menu{
+        width: 30rem;
+        height: 40rem;
+    }
+
+
+    .Quiz{
+        width: 30rem;
+        height: 40rem;
+       
+    }
+    
+    .End{
+        width: 40rem;
+        height: 40rem;
+    }
+ 
+    .question-text{
+        font-size:1.2rem;
+        text-align: center;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .Menu{
+        width: 28rem;
+        height: 40rem;
+    }
+
+
+    .Quiz{
+        width: 28rem;
+        height: 40rem;
+       
+    }
+    
+    .End{
+        width: 40rem;
+        height: 40rem;
+    }
+ 
+    .question-text{
+        font-size:1.2rem;
+        text-align: center;
+    }
+
+    .myChart{
+        background-color: black;
+        padding-top: 1rem;
+        width: 25rem;
+         height: 20rem;
+         font-size: 2rem;
+    }
+
+}
+
+@media (max-width:415px){
+
+    .Menu{
+        width: 22rem;
+        height: 28rem;
+    }
+
+
+    .Quiz{
+        width: 22rem;
+        height: 28rem;
+       
+    }
+    
+    .End{
+        width: 22rem;
+        height: 28rem;
+    }
+    .scoreboard{
+        display: flex;
+        justify-content: space-evenly;
+        width:100%;
+        font-size: 0.8rem;
+        padding-top: 2rem;
+    }
+
+ 
+    .question-text{
+        font-size:1rem;
+        text-align: center;
+      }
+
+      .Quiz button{
+        width:15rem;
+        height:1.8rem;
+        margin: 0.2rem;
+        border-radius: 5px;
+        cursor:pointer;
+    }
+
+    .myChart{
+        background-color: black;
+        padding-top: 0.2rem;
+        width: 20rem;
+         height: 20rem;
+         font-size: 1rem;
+    }
+
+}
