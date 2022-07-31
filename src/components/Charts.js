@@ -11,39 +11,45 @@ import {QuizContext} from "../helpers/Context";
 
 
 const Charts = () =>{
-const {defCorrect, mutCorrect, retCorrect, IterCorrect,ObjCorrect,CondCorrect } = useVariable();
+const {defCorrect, mutCorrect, retCorrect, IterCorrect } = useVariable();
 const {score, setScore, setGameState} = useContext(QuizContext);
 const defQuest =  Questions.filter((obj) => obj.category === "Definition").length;
 const mutQuest = Questions.filter((obj) => obj.category === "Mutators").length;
 const retQuest  = Questions.filter((obj) => obj.category === "Returns").length;
 const iterQuest = Questions.filter((obj) => obj.category === "Iterations").length;
-const objQuest = Questions.filter((obj) => obj.category === "Objects").length;
-const condQuest  = Questions.filter((obj) => obj.category === "Conditional").length;
 
-const defPerc = defCorrect/defQuest;
-const mutPerc=  mutCorrect/mutQuest ;
-const retPerc = retCorrect/retQuest;
-const iterPerc = IterCorrect/iterQuest;
-const objPerc = ObjCorrect/objQuest;
-const condPerc =CondCorrect/condQuest;
+
+const defPerc = (defCorrect/defQuest) *100;
+const mutPerc=  (mutCorrect/mutQuest) *100 ;
+const retPerc = (retCorrect/retQuest) *100;
+const iterPerc = (IterCorrect/iterQuest) *100;
+
     
 
    <h1>% Correct By Category </h1>
    
     const barData = {
-        labels: ["Definitions","Mutators","Returns","Iteration", "Objects","Conditional"],
+        labels: ["Definitions","Mutators","Returns","Iteration"],
         datasets: [{
-            data: [defPerc, mutPerc,retPerc,iterPerc,objPerc,condPerc],
+          label: 'Percentage By Category',
+            data: [defPerc, mutPerc,retPerc,iterPerc],
             backgroundColor: ['blue','green', 'red','orange','gold','gray'],
-            borderColor:["black", "black","black","black","black","black"],       
-            borderWidth:2      
-               }]
-        
+            borderColor:["white", "white","white","white","white","white"],       
+            borderWidth:2 , 
+             
+               }],
+    };
+    const options = {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
     };
     
       return (
         <div className="App main">
-               <Bar data={barData}  />
+               <Bar data={barData} options={options} />
         </div>
       );
     }

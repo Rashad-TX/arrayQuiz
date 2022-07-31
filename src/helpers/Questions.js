@@ -144,7 +144,7 @@ export const Questions = [
 },
 {
     id:13,
-    question:"creates a new array with sub-array elements concatenated recursively to the specified depth?",
+    question:"Which method creates a new array with sub-array elements concatenated recursively to the specified depth?",
     category: "Definition",
     optionA: "flat",
     optionB: "map",
@@ -169,7 +169,7 @@ export const Questions = [
     question:"Which method executes a provided function once for each array element?",
     category: "Definition",
     optionA: "every",
-    optionB: "filter",
+    optionB: "some",
     optionC: "forEach",
     optionD: "find",
     answer:"optionC"
@@ -204,7 +204,7 @@ export const Questions = [
     optionA: "every",
     optionB: "find",
     optionC: "includes",
-    optionD: "copyWithin",
+    optionD: "some",
     answer:"optionD"
 
 },
@@ -232,7 +232,7 @@ export const Questions = [
 },
 {
     id:21,
-    question:"Which method returns the index of the 1st element that satisfies function, or a -1 is returned if none",
+    question:"Which method returns the index of the 1st element that satisfies the function, or a -1 is returned if none?",
     category: "Definition",
     optionA: "forEach",
     optionB: "join",
@@ -243,7 +243,7 @@ export const Questions = [
 },
 {
     id:22,
-    question:"Which method returns the value of the last element that satisfies function, or undefined is returned if none.?",
+    question:"Which method returns the value of the last element that satisfies the function, or undefined is returned if none?",
     category: "Definition",
     optionA: "findLastIndex",
     optionB: "findLast",
@@ -353,12 +353,12 @@ export const Questions = [
 },
 {
     id:32,
-    question:"Which method mutates the array it's called on?",
+    question:"Which method returns an Array Iterator object with key/value pairs?",
     category: "Definition",
-    optionA: "every",
-    optionB: "find",
-    optionC: "includes",
-    optionD: "copyWithin",
+    optionA: "obj",
+    optionB: "keys",
+    optionC: "findIndex",
+    optionD: "entries",
     answer:"optionD"
 
 },
@@ -392,7 +392,7 @@ export const Questions = [
     optionB: "toString",
     optionC: "isArray",
     optionD: "from",
-    answer:"optionD"
+    answer:"optionC"
 
 },
 {
@@ -485,27 +485,69 @@ export const Questions = [
 },
 {
     id:44,
-    question:"What does every() & some() return  return?",
+    question:"What does every() & some() return?",
     category: "Returns",
     optionA: "undefined",
     optionB: "a boolean",
     optionC: "null",
     optionD: "-1",
+    answer:"optionB"
+
+},
+{
+    id:45,
+    question:"Which is the correct syntax for a For Loop",
+    category: "Iterations",
+    optionA: "for (initializer; condition; iterator){fn}",
+    optionB: "for (condition; initializer; iterator){fn}",
+    optionC: "for (iterator; condition; initializer){fn}",
+    optionD: "(initializer; condition; iterator){fn}",
     answer:"optionA"
 
 },
+{
+    id:46,
+    question:"Which is the correct syntax for a Do While Loop",
+    category: "Iterations",
+    optionA: "do(condition, iterator, initizlizer)while{fn}",
+    optionB: "do (condition; initializer; iterator){fn}",
+    optionC: "do{fn} while(condition);",
+    optionD: "(initializer; condition; iterator)while{fn}",
+    answer:"optionC"
 
+},
+{
+    id:47,
+    question:"Which is the correct syntax for a While Loop",
+    category: "Iterations",
+    optionA: "while (condition){fn}" ,
+    optionB: "while(condition; initializer; iterator){fn}",
+    optionC: "do{fn} while(condition);",
+    optionD: "(initializer; condition; iterator){fn}",
+    answer:"optionA"
 
+},
+{
+    id:48,
+    question:"Which is the correct syntax for forEach",
+    category: "Iterations",
+    optionA: "array.forEach(fn)" ,
+    optionB: "arrray.forEach(func(currVal,idx,array){fn}",
+    optionC: "array.forEach(array * 2);",
+    optionD: "forEach(array){fn}",
+    answer:"optionB"
 
+},
+{
+    id:49,
+    question:"Which is the correct syntax for map",
+    category: "Iterations",
+    optionA: "array.map(fn)" ,
+    optionB: "map(array){fn}",
+    optionC: "array.map(array * 2);",
+    optionD: "array.map(func(currVal,idx)",
+    answer:"optionD"
 
-
-
-
-
-
-
-
-
-
+},
 
 ]

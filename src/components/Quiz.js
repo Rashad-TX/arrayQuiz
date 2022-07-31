@@ -70,14 +70,14 @@ const nextQuestion = () => {
 
 const completeQuiz = () => {
     if(Questions[currQuestion].answer == optionChosen){
+        audio.play();
         setScore(score + 1);
         setMyArray( [...myArray, Questions[currQuestion].category]);
         console.log(myArray);
         console.log("I was clicked!")
-
-     
+    
 }
-
+    
     setGameState("end");
 }
 
@@ -88,13 +88,13 @@ const completeQuiz = () => {
 return(
 <div className="Quiz">
 <div className="scoreboard">
-<h3 >Question {currQuestion} / {Questions.length}</h3>
+<h3 >Answered {currQuestion} / {Questions.length}</h3>
 <h3>Score: {score} / {Questions.length}</h3>
-<h3> {qPerc} %</h3>
+<h3>{qPerc} %</h3>
 
 </div>
 <h1 className="question-text">{Questions[currQuestion].question}</h1>
-<p className="cat-area">{Questions[currQuestion].category}</p>
+<p className="cat-area">Category:{Questions[currQuestion].category}</p>
 <div className="options">
 <button style={{ backgroundColor: buttonColor1 }}  id="optionA" className="opt-btn" onClick={pressedOption1}>{Questions[currQuestion].optionA}</button>
 <button style={{ backgroundColor: buttonColor2 }}   id="optionB" className="opt-btn" onClick={pressedOption2}>{Questions[currQuestion].optionB}</button>
